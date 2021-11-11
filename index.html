@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mixtlisoft">
+    <link rel="icon" href="https://permisosylicenciascoculagro.gob.mx/img/logo_cocula.jpg">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="L5UwEUNHno18c4TTxYgmGCyegcNOpgtBOpRmUWOl">
+
+    <title>Dirección de Tránsito Cocula Gro.</title>
+
+    <!-- Styles -->
+    <link href="https://permisosylicenciascoculagro.gob.mx/css/app_public.css" rel="stylesheet">
+
+    <style type="text/css">
+        .navbar-brand img {
+            height: 38px;
+            margin-top: -8px;
+            border-radius: 3px;
+        }
+        body {
+            /*background: linear-gradient(20deg, #6fe3e7, #4fb8d9 25%, #5648c1);*/
+        }
+        body, #app {
+            background: url('/img/bg63.gif');
+        }
+        #custom-hack {
+            background-color: white;
+            border-radius: 5px;
+        }
+        .js-loading-overlay {
+            background: linear-gradient(20deg, rgba(111, 227, 231, 0.3), rgba(79, 184, 217, 0.6) 25%, rgba(255, 255, 128, 0.6)) !important;
+            /*background: rgba(0, 0, 0, 0.3);*/
+        }
+    </style>
+
+        <style type="text/css">
+        #sello {
+            position: absolute;
+            width: 5em;
+            right: 2em;
+        }
+        #fila_permiso {
+            font-family: monospace;
+                            background-color: rgb(223, 240, 216);
+                    }
+        #folio {
+            font-family: monospace;
+        }
+    </style>
+
+    <!-- Scripts -->
+    <script>
+        window.Laravel = {"csrfToken":"L5UwEUNHno18c4TTxYgmGCyegcNOpgtBOpRmUWOl"};
+    </script>
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Branding Image -->
+                    <!--<a class="navbar-brand" href="https://permisosylicenciascoculagro.gob.mx">
+                        Dirección de Tránsito Cocula Gro.
+                    </a>-->
+                    <a class="navbar-brand" href="https://permisosylicenciascoculagro.gob.mx">
+                        <span>
+                            <img alt="Brand" src="https://permisosylicenciascoculagro.gob.mx/img/logo_cocula.jpg"/>
+                        </span>
+                        Tr&aacute;nsito
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        <li ><a href="https://permisosylicenciascoculagro.gob.mx">Inicio</a></li>
+                        <li class="dropdown "> 
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">
+                                Verificar <span class="caret"></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://permisosylicenciascoculagro.gob.mx/verificar-licencia">Licencias</a></li>
+                                <li><a href="https://permisosylicenciascoculagro.gob.mx/verificar-permiso">Permisos</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="https://permisosylicenciascoculagro.gob.mx/informacion-tramites">Informaci&oacute;n Tr&aacute;mites</a></li>
+                        <!--<li ><a href="https://permisosylicenciascoculagro.gob.mx/acerca">Acerca de</a></li>-->
+                        <li ><a href="https://permisosylicenciascoculagro.gob.mx/contacto">Contacto</a></li>
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+                            <div class="panel-body" id="custom-hack">
+                    <img id="sello" src="https://permisosylicenciascoculagro.gob.mx/img/certification-seal.png">
+                    <h1>Permiso Aut&eacute;ntico</h1>
+                                            <p>¡Verificaci&oacute;n Exitosa! El permiso se encuentra vigente.</p>
+                                        <div id="resultado_permiso" style="">
+                        <div class="table-responsive">
+                            <table id="tabla-permisos" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Folio</th>
+                                        <th>Marca</th>
+                                        <th>L&iacute;nea</th>
+                                        <th>Modelo</th>
+                                        <th>Color</th>
+                                        <th>N&uacute;m. Motor</th>
+                                        <th>N&uacute;m. Serie</th>
+                                        <th>Fecha Expedici&oacute;n</th>
+                                        <th>Fecha Vencimiento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="fila_permiso">
+                                        <td>28564</td>
+                                        <td>VOLKSWAGEN</td>
+                                        <td>ATLANTIC/JETTA</td>
+                                        <td>1987</td>
+                                        <td>---</td>
+                                        <td>NX-009842</td>
+                                        <td>16H0900360</td>
+                                        <td>2021-11-11</td>
+                                        <td>2021-12-11</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="visible-xs text-info text-center">
+                            Desliza horizontalmente &lt;===&gt;
+                        </p>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://permisosylicenciascoculagro.gob.mx/js/app_public.js"></script>
+        <script type="text/javascript">
+        /*$(function () {
+            // flash auto hide
+            //$('div.alert').not('.alert-danger, .alert-important').delay(6000).slideUp(500);
+            $('#flash-overlay-modal').modal({backdrop: 'static',keyboard: false});
+        })*/
+    </script>
+</body>
+</html>
